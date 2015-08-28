@@ -18,3 +18,12 @@ dev_dependencies:
   matcher: ^0.11.0
   mockito: ^0.8.2
   unittest: ^0.11.0
+  dynamic_type_inference:
+    path: ../../../dynamic_type_inference
+transformers:
+- dynamic_type_inference:
+    package: "linter"
+    staticEntry: "bin/linter.dart"
+- $dart2js:
+    commandLineOptions: [--output-type=dart]
+    $exclude: ["bin", "example", "lib", "test"]
